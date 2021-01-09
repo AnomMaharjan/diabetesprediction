@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Diabetes prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue darken-1" role="navigation">
+    <div class="nav-wrapper container"><a id="header_logo" class="brand-logo center" href="/"s style="font-size: 1.35em;">Diabetes Prediction</a>
+      <!-- <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+      </ul> -->
+
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+     <h5 style="text-align: center; color: rgb(0, 0, 0); font-weight: 600;">{{pred}}</h5>
+      <!-- <h1 class="header center blue-text">Diabetes Prediction</h1> -->
+      <div class="row center">
+        <h4 class="header col s12 dark">Know the probability of having Diabetes
+        <br>
+        </h5>
+        <p></p>
+      </div>
+
+
+      <div class="row">
+        <form action='/predict' method="post" class="col l12 s12">
+            <div class="row">
+                <div class="input-field col l4 s12">
+                    <label for="first_name"><b>Glucose </b></label>
+                    <br>
+                    <input id="first_name" name="1" placeholder="Glucose level in sugar" type="number" step='0.01' class="validate" required style="caret-color: green">
+    
+                </div>
+
+                <div class="input-field col l4 s12">
+                    <label for="_name"><b>Age</b></label>
+                    <br>
+                    <input id="first_name" name="2" placeholder="Age" type="number" class="validate" required>
+                </div>  
+                
+                <div class="input-field col l4 s12">
+                  <label ><b>BMI</b></label>
+                  <br>
+                  <input id="first_name" name = "3" placeholder="Body Mass Index" type="number" step="0.01" required style="caret-color: green">
+
+                </div>
+
+                 <div class="input-field col l4 s12">
+                    <label for="first_name"><b>Pregnancies</b></label>
+                    <br>
+                    <input placeholder="No. of Pregnancies" name="4" id="first_name" type="number" class="validate" required style="caret-color: green" >
+                </div>
+                
+                <div class="input-field col l4 s12">
+                    <label for="first_name"><b>Insulin</b></label>
+                    <br>
+                    <input id="first_name" name="5" placeholder="Insulin level"  type="number" step="0.01" class="validate" required style="caret-color: green">
+                </div>
+              
+                
+                
+    
+          </div>
+    
+          <div class="row center">
+    
+              <button type="submit" class="btn-large darken-1 waves-effect waves-light blue">Predict Probability</button>
+
+          </div>
+        </form>
+  </div>
+
+      <br>
+      <p style="text-align: center; color: rgb(0, 0, 0);"><strong>This application is developed using RandomForest Classifier Model with an accuracy of 82.4% </strong></p>
+
+    <br><br>
+  </div>
+  </div>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
